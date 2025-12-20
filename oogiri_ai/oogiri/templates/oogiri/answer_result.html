@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}採点結果{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4 text-center">AIによる採点結果</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-primary mb-5">
+                
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="h4 mb-0">面白さの評価</h2>
+                </div>
+                
+                <div class="card-body text-center">
+                    <p class="fs-1 fw-bold text-success">{{ answer.score }} 点 / 5点満点</p>
+                    
+                    <hr>
+                    
+                    <h5 class="card-title text-muted">AIからの講評</h5>
+                    <p class="card-text border p-3 bg-light rounded text-start">{{ answer.review_text|linebreaksbr }}</p>
+                    
+                    <hr>
+                    
+                    <h5 class="card-title text-muted">あなたのお題と回答</h5>
+                    <dl class="row text-start mt-3">
+                        <dt class="col-sm-3 text-truncate">お題:</dt>
+                        <dd class="col-sm-9">{{ answer.question.question_text }}</dd>
+                        
+                        <dt class="col-sm-3 text-truncate">あなたの回答:</dt>
+                        <dd class="col-sm-9 fw-bold text-danger">{{ answer.answer_text }}</dd>
+                        
+                        <!-- <dt class="col-sm-3 text-truncate">元ネタ:</dt>
+                        <dd class="col-sm-9 text-muted">{{ answer.question.source_title|linebreaksbr }}</dd> -->
+                    </dl>
+                </div>
+                
+            </div>
+            
+            <div class="text-center">
+                <a href="{% url 'oogiri:proposal' %}" class="btn btn-warning btn-lg">続けて新しいお題を探す</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}回答を入力{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">大喜利に回答</h1>
+    
+    <div class="card shadow-lg mb-4">
+        <div class="card-header bg-dark text-white">
+            <h2 class="h5 mb-0">お題：{{ question.question_text }}</h2>
+        </div>
+        <div class="card-body">
+            <!-- <p class="text-muted small">（お題の元ネタ：{{ question.source_title }}）</p> -->
+
+            <form method="post" class="mt-4">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="{{ form.answer_text.id_for_label }}" class="form-label fs-5">あなたの回答（大喜利）</label>
+                    
+                    <textarea name="{{ form.answer_text.name }}" 
+                        id="{{ form.answer_text.id_for_label }}" 
+                        class="form-control" 
+                        rows="5" 
+                        placeholder="面白い回答を入力してください"
+                        {% if form.answer_text.value %}value="{{ form.answer_text.value }}"{% endif %}
+                        required>{{ form.answer_text.value|default:"" }}
+                    </textarea>
+
+                    {% for error in form.answer_text.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-lg w-100 mt-4">
+                    AIに面白さを採点してもらう
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="mt-4 text-center">
+        <a href="{% url 'oogiri:proposal' %}" class="btn btn-link">お題提案画面に戻る</a>
+    </div>
+{% endblock %}
