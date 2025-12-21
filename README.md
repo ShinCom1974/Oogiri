@@ -4,7 +4,7 @@ AI suggests theme of Oogiri and review answer to the theme.
 
 
 ## Export JSONL File for fine-tuning
-type the following command.
+type the following command.  
 $ python manage.py export_training_data
 
 ## An example of fine-tuning
