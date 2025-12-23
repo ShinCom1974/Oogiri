@@ -19,21 +19,21 @@ After you run the notebook, you can download `oogiri_finetuned_model.zip`.
 ## local_inference directory
 After you get `oogiri_finetuned_model.zip` file, you can infer Oogiri questions and answers by fine-tuned model on your local PC.
 
-├─local_inference
-│  │  local_inference.py.py
-│  │
-│  └─oogiri_finetuned_model
-│          added_tokens.json
-│          chat_template.jinja
-│          config.json
-│          generation_config.json
-│          model-00001-of-00002.safetensors
-│          model-00002-of-00002.safetensors
-│          model.safetensors.index.json
-│          special_tokens_map.json
-│          tokenizer.json
-│          tokenizer.model
-│          tokenizer_config.json
+├─local_inference  
+│  │  local_inference.py  
+│  │  
+│  └─oogiri_finetuned_model  
+│          added_tokens.json  
+│          chat_template.jinja  
+│          config.json  
+│          generation_config.json  
+│          model-00001-of-00002.safetensors  
+│          model-00002-of-00002.safetensors  
+│          model.safetensors.index.json  
+│          special_tokens_map.json  
+│          tokenizer.json  
+│          tokenizer.model  
+│          tokenizer_config.json  
 
 
 ### Inference by fine-tuned model on local CPU PC.
