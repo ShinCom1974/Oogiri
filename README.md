@@ -37,7 +37,7 @@ After you get `oogiri_finetuned_model.zip` file, you can infer Oogiri questions 
 
 
 ### Inference by fine-tuned model on local CPU PC.
-Change directory to `local_inference`, and type the following command.
+Change directory to `local_inference`, and type the following command.  
 $ python local_inference.py 
 
 
